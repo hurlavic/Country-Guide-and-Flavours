@@ -1,280 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Roboto+Slab:wght@100&family=Roboto:wght@100;400;500;700&display=swap"
-        rel="stylesheet">
-    <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
-    <script src="https://kit.fontawesome.com/de1197ced0.js" crossorigin="anonymous"></script>
-    <title>Country Guide and Flavours</title>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <style>
-        table {
-            display: none !important;
-        }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Roboto+Slab:wght@100&family=Roboto:wght@100;400;500;700&display=swap"
+            rel="stylesheet">
+        <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+        <script src="https://kit.fontawesome.com/de1197ced0.js" crossorigin="anonymous"></script>
+        <title>Country Guide and Flavours</title>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript"
+            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <style>
+            table {
+                display: none !important;
+            }
+        </style>
+    </head>
 
-<body>
-    <header id="top">
-        <a class="navbar-brand" href="./index.html"> <img src="./assets/images/brand logo.png" alt="brand-logo"
-                class="logo"> </a>
-        <h1>Country Guide and Flavours</h1>
-        <div class="contact-links">
-            <a href="#" target="_blank">
-                <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a href="#" target="_blank">
-                <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a href="#" target="_blank">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-        </div>
-    </header>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav nav-md">
-                <a class="nav-link active" href="#about-us">About Us</a>
-                <a class="nav-link active" href="#" id="destination">Destinations</a>
-                <!-- Search input field for navBar, hidden on smaller screens-->
-                <form class="search-field nav-search">
-                    <input type="text" placeholder="Search country..." class="form-input" id="countryInput">
-                    <a href="#">
+    <body>
+        <header id="top">
+            <a class="navbar-brand" href="./index.html"> <img src="./assets/images/brand logo.png" alt="brand-logo"
+                    class="logo"> </a>
+            <h1>Country Guide and Flavours</h1>
+            <div class="contact-links">
+                <a href="#" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </header>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav nav-md">
+                    <a class="nav-link active" href="#about-us">About Us</a>
+                    <a class="nav-link active" href="#" id="destination">Destinations</a>
+                    <!-- Search input field for navBar, hidden on smaller screens-->
+                    <form class="search-field nav-search" action="submit">
+                        <input type="text" placeholder="Search country..." class="form-input" id="countryInput">
+                        <button type="submit" id="btn">
+                            <i id="searchButton" class="search-input-wrapper search"></i>
+                        </button>
+                    </form>
+                </div>
+                </section>
+                <a class="nav-link active contact" href="#">Contact</a>
+            </div>
+            <li class="nav-item dropdown navbar-nav en">
+                <div id="google_translate_element"></div>
+            </li>
+            </div>
+        </nav>
+        <div id="result"></div>
+        <!-- Jumbotron -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="flex-container">
+                <div class="container">
+                    <h2 class="display-4">Welcome to Country Guide and Flavours!</h2>
+                    <p class="lead">Your one-stop destination for discovering the world's most exciting places and
+                        authentic
+                        cuisines.
+                        Our mission is to provide you with comprehensive travel information, top-rated recommendations,
+                        and
+                        mouth-watering recipes that will take you on a journey around the globe. Whether you're a
+                        seasoned
+                        traveler or a curious explorer, we've got you covered. So, sit back, relax, and let us take you
+                        on
+                        an adventure
+                        you'll never forget!</p>
+                </div>
+                <!-- Search input field for jumbotron, hidden on larger screens-->
+                <form class="search-field jumbotron-search search-sm" action="submit">
+                    <input type="text" placeholder="Search country..." class="form-input" id="countryInput-SM">
+                    <button type="submit" id="btn">
                         <i id="searchButton" class="search-input-wrapper search"></i>
-                    </a>
+                    </button>
                 </form>
             </div>
-            </section>
-            <a class="nav-link active contact" href="#">Contact</a>
         </div>
-        <li class="nav-item dropdown navbar-nav en">
-            <div id="google_translate_element"></div>
-            <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                En
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Fr</a>
-                <a class="dropdown-item" href="#">Esp</a>
-            </div> -->
-        </li>
+        </section>
         </div>
-    </nav>
-    <div id="result"></div>
-    <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid">
-        <div class="flex-container">
-            <div class="container">
-                <h2 class="display-4">Welcome to Country Guide and Flavours!</h2>
-                <p class="lead">Your one-stop destination for discovering the world's most exciting places and authentic
-                    cuisines.
-                    Our mission is to provide you with comprehensive travel information, top-rated recommendations, and
-                    mouth-watering recipes that will take you on a journey around the globe. Whether you're a seasoned
-                    traveler or a curious explorer, we've got you covered. So, sit back, relax, and let us take you on
-                    an adventure
-                    you'll never forget!</p>
-            </div>
-            <!-- Search input field for jumbortron, hidden on larger screens-->
-            <form class="search-field jumbotron-search">
-                <input type="text" placeholder="Search country..." class="form-input" id="countryInput">
-                <a href="#">
-                    <i id="searchButton" class="search-input-wrapper search"></i>
-                </a>
-            </form>
-        </div>
-    </div>
-    </section>
-    </div>
-    <!-- Sub-heading -->
-    <h2 class="heading-cards">Taste the world, one country at a time...</h2>
+        <h2 class="heading-cards">Taste the world, one country at a time...</h2>
 
-    <!-- Displays cards for country information -->
-    <section>
-        <div class="container-fluid row-1">
-            <div class="row row-cols-1 row-cols-md-2 ">
-                <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
-                    <div class="card index-card">
-                        <img src="./assets/images/Flag-France.webp" class="card-img-top flag" alt="placeholder image">
-                        <div class="card-body">
-                            <h3 class="card-title">France</h3>
-                            <p class="card-text">France is a country in Western Europe known for its fashion, cuisine,
-                                art,
-                                and landmarks such as the Eiffel Tower, the Louvre Museum, and the Palace of Versailles.
-                            </p>
-                            <a href="https://theplanetd.com/traditional-french-food/">
-                                <button type="button" class="btn btn-primary">Explore Flavour</button>
-                            </a>
+        <!-- Displays cards for country information -->
+        <section>
+            <div class="container-fluid row-1">
+                <div class="row row-cols-1 row-cols-md-2 ">
+                    <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
+                        <div class="card index-card">
+                            <img src="./assets/images/Flag-France.webp" class="card-img-top flag"
+                                alt="placeholder image">
+                            <div class="card-body">
+                                <h3 class="card-title">France</h3>
+                                <p class="card-text">France is a country in Western Europe known for its fashion,
+                                    cuisine,
+                                    art,
+                                    and landmarks such as the Eiffel Tower, the Louvre Museum, and the Palace of
+                                    Versailles.
+                                </p>
+                                <a href="https://theplanetd.com/traditional-french-food/">
+                                    <button type="button" class="btn btn-primary">Explore Flavour</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
-                    <div class="card index-card">
-                        <img src="./assets/images/Flag-Italy.webp" class="card-img-top" alt="placeholder image">
-                        <div class="card-body">
-                            <h3 class="card-title">Italy</h3>
-                            <p class="card-text">Italy is a country in Southern Europe known for its fashion, art,
-                                history, and landmarks such as the Colosseum, the Leaning Tower of Pisa, and the canals
-                                of Venice.</p>
-                            <a href="https://www.worldtravelconnector.com/italian-cuisine-traditional-foods-in-italy/">
-                                <button type="button" class="btn btn-primary">Explore Flavour</button>
-                            </a>
+                    <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
+                        <div class="card index-card">
+                            <img src="./assets/images/Flag-Italy.webp" class="card-img-top" alt="placeholder image">
+                            <div class="card-body">
+                                <h3 class="card-title">Italy</h3>
+                                <p class="card-text">Italy is a country in Southern Europe known for its fashion, art,
+                                    history, and landmarks such as the Colosseum, the Leaning Tower of Pisa, and the
+                                    canals
+                                    of Venice.</p>
+                                <a
+                                    href="https://www.worldtravelconnector.com/italian-cuisine-traditional-foods-in-italy/">
+                                    <button type="button" class="btn btn-primary">Explore Flavour</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
-                    <div class="card index-card">
-                        <img src="./assets/images/india-flag-png-large.png" class="card-img-top"
-                            alt="placeholder image">
-                        <div class="card-body">
-                            <h3 class="card-title">India</h3>
-                            <p class="card-text">India is a country in South Asia known for its diverse culture,
-                                religions, and languages. It is home to the Taj Mahal, the Himalayan Mountains, and the
-                                bustling city of Mumbai.</p>
-                            <a href="https://www.roughguides.com/gallery/traditional-indian-food/">
-                                <button type="button" class="btn btn-primary">Explore Flavour</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Cards for second row -->
-        <div class="container-fluid row-2">
-            <div class="row row-cols-1 row-cols-md-2 ">
-                <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
-                    <div class="card index-card">
-                        <img src="./assets/images/Flag-United-Kingdom.webp" class="card-img-top uk-img"
-                            alt="placeholder image">
-                        <div class="card-body">
-                            <h3 class="card-title">United Kingdom</h3>
-                            <p class="card-text">The United Kingdom, consisting of England, Scotland, Wales,
-                                and Northern Ireland, is a constitutional monarchy with a parliamentary democracy
-                                and a population of around 68 million people.</p>
-                            <a
-                                href="https://www.twinenglishcentres.com/blog/7-traditional-british-dishes-you-need-to-try">
-                                <button type="button" class="btn btn-primary">Explore Flavour</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
-                    <div class="card index-card">
-                        <img src="./assets/images/Flag-United-States-of-America.webp" class="card-img-top"
-                            alt="placeholder image">
-                        <div class="card-body">
-                            <h3 class="card-title">USA</h3>
-                            <p class="card-text">The United States of America is a federal republic comprising
-                                50 states and a population of over 330 million people. It is the world's largest
-                                economy and a leading cultural and technological force.</p>
-                            <a href="https://www.traveller.com.au/the-traveller-10-musttry-american-food-gqbjjm">
-                                <button type="button" class="btn btn-primary">Explore Flavour</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
-                    <div class="card index-card rom">
-                        <img src="./assets/images/Flag-Romania.webp" class="card-img-top ro-img"
-                            alt="placeholder image">
-                        <div class="card-body">
-                            <h3 class="card-title">Romania</h3>
-                            <p class="card-text">Romania is a southeastern European country with a population of
-                                around 19 million people. It is known for its stunning natural landscapes, rich
-                                history and culture, and its famous Transylvania region.</p>
-                            <a href="https://www.chefspencil.com/top-10-romanian-foods/">
-                                <button type="button" class="btn btn-primary">Explore Flavour</button>
-                            </a>
+                    <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
+                        <div class="card index-card">
+                            <img src="./assets/images/india-flag-png-large.png" class="card-img-top"
+                                alt="placeholder image">
+                            <div class="card-body">
+                                <h3 class="card-title">India</h3>
+                                <p class="card-text">India is a country in South Asia known for its diverse culture,
+                                    religions, and languages. It is home to the Taj Mahal, the Himalayan Mountains, and
+                                    the
+                                    bustling city of Mumbai.</p>
+                                <a href="https://www.roughguides.com/gallery/traditional-indian-food/">
+                                    <button type="button" class="btn btn-primary">Explore Flavour</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- About us section -->
-    <section id="about-us">
-        <h2 class="about-header">About Us</h2>
-        <p class="about-text">Country Guide and Flavours is a travel brand that aims to connect people with their
-            dream destinations. We provide comprehensive information about each country, including its culture, history,
-            attractions, and
-            cuisine. Our focus on food means that we not only provide you with the best travel recommendations, but also
-            with
-            authentic recipes that capture the essence of each destination. At Country Guide and Flavours, we are
-            passionate
-            about helping you explore the world, one dish at a time.</p>
-    </section>
-    <article class="meet-team">
-        <h2 class="profile-text">Meet our team</h2>
-        <div class="profile-container">
-            <div class="profile">
-                <img src="./assets/images/Ciprian.png" alt="" class="dp">
-                <a href="https://github.com/codefastlearner">
-                    <h5 class="dp-text">Ciprain Oltean</h5>
-                </a>
-                <p class="dp-text">Team Leader</p>
+            <!-- Cards for second row -->
+            <div class="container-fluid row-2">
+                <div class="row row-cols-1 row-cols-md-2 ">
+                    <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
+                        <div class="card index-card">
+                            <img src="./assets/images/Flag-United-Kingdom.webp" class="card-img-top uk-img"
+                                alt="placeholder image">
+                            <div class="card-body">
+                                <h3 class="card-title">United Kingdom</h3>
+                                <p class="card-text">The United Kingdom, consisting of England, Scotland, Wales,
+                                    and Northern Ireland, is a constitutional monarchy with a parliamentary democracy
+                                    and a population of around 68 million people.</p>
+                                <a
+                                    href="https://www.twinenglishcentres.com/blog/7-traditional-british-dishes-you-need-to-try">
+                                    <button type="button" class="btn btn-primary">Explore Flavour</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
+                        <div class="card index-card">
+                            <img src="./assets/images/Flag-United-States-of-America.webp" class="card-img-top"
+                                alt="placeholder image">
+                            <div class="card-body">
+                                <h3 class="card-title">USA</h3>
+                                <p class="card-text">The United States of America is a federal republic comprising
+                                    50 states and a population of over 330 million people. It is the world's largest
+                                    economy and a leading cultural and technological force.</p>
+                                <a href="https://www.traveller.com.au/the-traveller-10-musttry-american-food-gqbjjm">
+                                    <button type="button" class="btn btn-primary">Explore Flavour</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
+                        <div class="card index-card rom">
+                            <img src="./assets/images/Flag-Romania.webp" class="card-img-top ro-img"
+                                alt="placeholder image">
+                            <div class="card-body">
+                                <h3 class="card-title">Romania</h3>
+                                <p class="card-text">Romania is a southeastern European country with a population of
+                                    around 19 million people. It is known for its stunning natural landscapes, rich
+                                    history and culture, and its famous Transylvania region.</p>
+                                <a href="https://www.chefspencil.com/top-10-romanian-foods/">
+                                    <button type="button" class="btn btn-primary">Explore Flavour</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="profile">
-                <img src="./assets/images/Navjot.png" alt="" class="dp">
-                <a href="https://github.com/nav2010">
-                    <h5 class="dp-text">Navjot Kaur</h5>
-                </a>
-                <p class="dp-text">Jnr. Frontend Dev</p>
+        </section>
+        <!-- About us section -->
+        <section id="about-us">
+            <h2 class="about-header">About Us</h2>
+            <p class="about-text">Country Guide and Flavours is a travel brand that aims to connect people with their
+                dream destinations. We provide comprehensive information about each country, including its culture,
+                history,
+                attractions, and
+                cuisine. Our focus on food means that we not only provide you with the best travel recommendations, but
+                also
+                with
+                authentic recipes that capture the essence of each destination. At Country Guide and Flavours, we are
+                passionate
+                about helping you explore the world, one dish at a time.</p>
+        </section>
+        <article class="meet-team">
+            <h2 class="profile-text">Meet our team</h2>
+            <div class="profile-container">
+                <div class="profile">
+                    <img src="./assets/images/Ciprian.png" alt="" class="dp">
+                    <a href="https://github.com/codefastlearner">
+                        <h5 class="dp-text">Ciprain Oltean</h5>
+                    </a>
+                    <p class="dp-text">Team Leader</p>
+                </div>
+                <div class="profile">
+                    <img src="./assets/images/Navjot.png" alt="" class="dp">
+                    <a href="https://github.com/nav2010">
+                        <h5 class="dp-text">Navjot Kaur</h5>
+                    </a>
+                    <p class="dp-text">Jnr. Frontend Dev</p>
+                </div>
+                <div class="profile">
+                    <img src="./assets/images/Zaki Profile.jpeg" alt="" class="dp">
+                    <a href="https://github.com/Zakisab">
+                        <h5 class="dp-text">Sabrie Sakariye</h5>
+                    </a>
+                    <p class="dp-text">Jnr. Frontend Dev</p>
+                </div>
+                <div class="profile">
+                    <img src="./assets/images/Victor Profile.jpeg" alt="" class="dp">
+                    <a href="https://github.com/hurlavic">
+                        <h5 class="dp-text">Victor Akindele</h5>
+                    </a>
+                    <p class="dp-text">Jnr. Frontend Dev</p>
+                </div>
             </div>
-            <div class="profile">
-                <img src="./assets/images/Zaki Profile.jpeg" alt="" class="dp">
-                <a href="https://github.com/Zakisab">
-                    <h5 class="dp-text">Sabrie Sakariye</h5>
-                </a>
-                <p class="dp-text">Jnr. Frontend Dev</p>
-            </div>
-            <div class="profile">
-                <img src="./assets/images/Victor Profile.jpeg" alt="" class="dp">
-                <a href="https://github.com/hurlavic">
-                    <h5 class="dp-text">Victor Akindele</h5>
-                </a>
-                <p class="dp-text">Jnr. Frontend Dev</p>
-            </div>
-        </div>
-    </article>
+        </article>
 
-    <!-- Footer -->
-    <footer>
-        <!-- Arrow back to top -->
-        <div>
-            <a href="#top">
-                <img src="./assets/images/arrow-up-up.gif" alt="back to top arrow" id="home-arrow">
-            </a>
-        </div>
-        <p> &copy; Copywright 2023 CGF team</p>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
-</body>
+        <!-- Footer -->
+        <footer>
+            <!-- Arrow back to top -->
+            <div>
+                <a href="#top">
+                    <img src="./assets/images/arrow-up-up.gif" alt="back to top arrow" id="home-arrow">
+                </a>
+            </div>
+            <p> &copy; Copywright 2023 CGF team</p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
 
 </html>

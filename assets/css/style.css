@@ -96,7 +96,7 @@ h1 {
   font-weight: 400;
 }
 .jumbotron-search {
-  display: none;
+  visibility: hidden;
 }
 
 /* Styles the search Bar field */
@@ -129,6 +129,11 @@ form {
   height: 25px;
   width: 40px;
 }
+#btn{
+  border-style: none;
+  outline: 0;
+  background-color: inherit;
+}
 /* Styles error message from search bar */
 .error {
   color: red;
@@ -138,10 +143,10 @@ form {
 /* media query for header, navBar, jumbotron texts and searchBar */
 @media (max-width: 1000px) {
     .jumbotron-search {
-      display: block;
+      visibility: visible;
     }
     .nav-search {
-      display: none;
+      visibility: hidden;
     }
   }
   @media (max-width: 990px) {

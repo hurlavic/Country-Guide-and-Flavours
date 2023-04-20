@@ -1,86 +1,61 @@
-// Define variable globally
-let searchBtn = document.getElementById("searchButton");
-let countryInp = document.getElementById("countryInput");
+// Search field selectors
+const form = document.querySelector(".search-field");
+const countryInp = document.querySelector("#countryInput");
+const searchButton = document.querySelector("#btn");
+const formSM = document.querySelector(".search-sm");
+const inputSM = document.querySelector("#countryInput-SM");
 
-// Adds event listener to generate search by clicking enter button
-countryInp.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    // Execute search function here
-    search();
-  }
-});
-
-// add click event listner to search button
-searchBtn.addEventListener("click", (e) => {
+// Search field submit event handlers
+function handleSearchSubmit(e, input) {
   e.preventDefault();
-// Execute search function here
-  search();
-});
-
-// Defines function for search parameter
-function search() {
-  let countryName = countryInp.value;
-  let finalURL = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
-  console.log(finalURL);
+  const countryName = input.value;
+  const finalURL = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
   fetch(finalURL)
     .then((response) => response.json())
     .then((data) => {
-      savesCountryResult(data);
-
+      saveCountryResult(data);
       window.location.href = "search.html";
     })
     .catch(() => {
-      if (countryName.length == 0) {
-        result.innerHTML = `<h3 class="error">The input field cannot be empty </h3>`;
-        setTimeout(() => {
-          result.innerHTML = "";
-        }, 3000);
-      } else {
-        result.innerHTML = `<h3 class="error">Please enter a valid country name.</h3>`;
-        setTimeout(() => {
-          result.innerHTML = "";
-        }, 3000);
-      }
+      const error =
+        countryName.length == 0
+          ? "The input field cannot be empty"
+          : "Please enter a valid country name.";
+      displayErrorMessage(error);
     });
 }
 
-// Function that stores fetched data
-function savesCountryResult(data) {
-  let name = data[0].name.common;
-  let flag = data[0].flags.svg;
-  let capital = data[0].capital[0];
-  let region = data[0].continents[0];
-  let populations = data[0].population;
-  let populationInMillions = (populations / 1000000).toFixed(2);
-  let language = Object.values(data[0].languages)
-    .toString()
-    .split(",")
-    .join(",");
-  let timeZone = data[0].timezones.toString().split(",").join(",");
+form.addEventListener("submit", (e) => handleSearchSubmit(e, countryInp));
+formSM.addEventListener("submit", (e) => handleSearchSubmit(e, inputSM));
 
-  // Stores data in local storage
-  let countryArray = [
-    flag,
-    name,
-    capital,
-    region,
-    populationInMillions,
-    language,
-    timeZone,
+// Store fetched data
+function saveCountryResult(data) {
+  const { name, flags, capital, continents, population, languages, timezones } =
+    data[0];
+  const countryArray = [
+    flags.svg,
+    name.common,
+    capital[0],
+    continents[0],
+    (population / 1000000).toFixed(2),
+    Object.values(languages).toString().split(",").join(","),
+    timezones.toString().split(",").join(","),
   ];
   localStorage.setItem("countryData", JSON.stringify(countryArray));
 }
 
-// Sets arrow to 'display', this takes user back to top of page when clicked
-const arrow = document.querySelector("#home-arrow");
-const pageHeight = document.documentElement.scrollHeight;
-const quarterPageHeight = pageHeight * 0.25;
+// Display error message
+function displayErrorMessage(message) {
+  const result = document.querySelector("#result");
+  result.innerHTML = `<h3 class="error">${message}</h3>`;
+  setTimeout(() => {
+    result.innerHTML = "";
+  }, 3000);
+}
 
+// Arrow to top of page
+const arrow = document.querySelector("#home-arrow");
+const quarterPageHeight = document.documentElement.scrollHeight * 0.25;
 window.addEventListener("scroll", () => {
-  if (window.scrollY >= quarterPageHeight) {
-    arrow.style.display = "block";
-  } else {
-    arrow.style.display = "none";
-  }
+  arrow.style.display = window.scrollY >= quarterPageHeight ? "block" : "none";
 });
